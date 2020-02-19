@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="mainBorderPane" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="File">
+                        <MenuItem fx:id="newItem" text="New" />
+                        <MenuItem fx:id="editItem" text="Edit" />
+                        <MenuItem fx:id="deleteItem" text="Delete" />
+                        <SeparatorMenuItem />
+                        <MenuItem fx:id="exit" text="Exit" />
+                </Menu>
+            </MenuBar>
+            <ToolBar>
+                <HBox spacing="5.0">
+                    <Button onAction="#showAddTodoItemDialog" text="New..." />
+                    <ToggleButton fx:id="toggleButton" text="Today's Item">
+                        <tooltip>
+                            <Tooltip text="Button down: Show today's items only. Button up: Show all items" />
+                        </tooltip>
+                    </ToggleButton>
+                    <Button fx:id="btnDB" text="DB Settings" />
+                </HBox>
+            </ToolBar>
+        </VBox>
+    </top>
+    <left>
+        <ListView fx:id="todoListView">
+
+        </ListView>
+    </left>
+    <center>
+        <VBox style="-fx-background-color: white;">
+            <TextArea fx:id="todoTextArea" wrapText="true" VBox.vgrow="ALWAYS">
+
+            </TextArea>
+            <HBox VBox.vgrow="NEVER">
+                <Label style="-fx-background-color: white" text="Due Date:">
+                    <font>
+                        <Font name="Times New Roman bold" size="20" />
+                    </font>
+                </Label>
+                <Label fx:id="dueDate" style="-fx-background-color: white;">
+                    <font>
+                        <Font name="Times New Roman bold" size="20" />
+                    </font>
+                </Label>
+            </HBox>
+        </VBox>
+
+    </center>
+</BorderPane>
